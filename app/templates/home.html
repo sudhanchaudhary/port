@@ -1,11 +1,274 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hero Section - Developer Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
-<body>
-    
+
+<body class="bg-dark-custom text-white">
+
+    <div class="grid-overlay"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark pt-4 position-relative">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center fw-bold" href="#">
+                <span class="text-primary me-2">&lt;/&gt;</span> dev::madhusudhan
+            </a>
+            <div class="collapse navbar-collapse justify-content-center">
+                <ul class="navbar-nav gap-4">
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">GitHub</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="d-flex gap-3">
+                <a href="#" class="btn btn-dark-glass btn-sm px-3">GitHub</a>
+                <a href="#" class="btn btn-primary btn-sm px-3">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section d-flex align-items-center position-relative">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="status-badge mb-4">
+                        <span class="dot"></span> Available for Backend & Full-Stack Contracts
+                    </div>
+                    <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-3">SYSTEM_HANDSHAKE.SH</h6>
+                    <h1 class="display-3 fw-bold mb-4">Madhusudhan Chaudhary</h1>
+                    <h3 class="h4 text-secondary-light mb-4">Full-Stack Developer | Backend Specialist (Django, Python,
+                        REST APIs)</h3>
+                    <p class="text-secondary mb-5 fs-5">
+                        I design and build scalable backend systems and full-stack web applications.<br>
+                        Focused on performance, clean architecture, and scalable APIs.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <button class="btn btn-primary btn-lg px-4 fs-6">&lt; &gt; View Projects</button>
+                        <button class="btn btn-dark-glass btn-lg px-4 fs-6">Contact Me</button>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="code-window">
+                        <div class="code-header d-flex justify-content-between align-items-center">
+                            <div class="dots d-flex gap-2">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <div class="file-name">developer_service.py</div>
+                        </div>
+                        <div class="code-body">
+                            <pre><code><span class="c-blue">class</span> <span class="c-white">DeveloperService:</span>
+  <span class="c-blue">def</span> <span class="c-yellow">__init__</span>(self):
+    self.name = <span class="c-green">"Madhusudhan Chaudhary"</span>
+    self.focus = [<span class="c-green">"Clean Architecture"</span>, <span class="c-green">"Scalability"</span>]
+    self.stack = {<span class="c-orange">"lang"</span>: <span class="c-green">"Python"</span>, <span class="c-orange">"framework"</span>: <span class="c-green">"Django"</span>}
+
+  <span class="c-blue">def</span> <span class="c-yellow">deploy_scalable_system</span>(self, reqs):
+    <span class="c-blue">return</span> BackendSystem(auth=<span class="c-green">"JWT"</span>, state=<span class="c-green">"Redis"</span>)</code></pre>
+                        </div>
+                        <div class="code-footer d-flex justify-content-between">
+                            <span>Docker sandboxed</span>
+                            <span>Status: 200 OK</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about-section py-5 position-relative">
+        <div class="container py-5">
+            <div class="row align-items-start g-5">
+
+                <div class="col-lg-4">
+
+                    <div class="header-content">
+                        <p class="text-primary fw-bold font-monospace mb-1">01 // BACKEND MINDSET</p>
+                        <h2 class="display-5 fw-bold text-white">About Me</h2>
+                        <div class="about-visual-container mb-4">
+                            <img src="{% static 'images/pp.png' %}" alt="About Me Visual"
+                                class="img-fluid rounded-4 grayscale-img">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="content-wrapper pe-lg-5">
+                        <p class="fs-4 text-white mb-4 leading-relaxed">
+                            I approach full-stack development with a backend-first philosophy. I design systems from the
+                            database layer up, prioritizing robust query performance, strict API contracts, and
+                            predictable data flows.
+                        </p>
+
+                        <div class="text-secondary fs-6 mb-4">
+                            <p class="mb-4">
+                                With extensive experience in Django and Python architectures, I regularly manage complex
+                                database schemas (PostgreSQL) and implement async queues using Redis and Celery. I
+                                structure my applications to easily containerize via Docker, preparing them for smooth
+                                horizontal scaling and reliable deployments.
+                            </p>
+                            <p>
+                                Whether configuring JWT auth pipelines, architecting high-frequency REST APIs, or
+                                tweaking state-management on React frontends, I strive for clean, documented code and
+                                bulletproof security.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="stack-section py-5">
+        <div class="container py-5">
+            <div class="mb-5">
+                <p class="text-primary fw-bold font-monospace mb-1">02 // CAPABILITIES</p>
+                <h2 class="display-5 fw-bold text-white mb-2">Technical Stack</h2>
+                <p class="text-secondary">Modern skills mapped by real production usage and system layers.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-xl-3 col-md-6">
+                    <div class="stack-column h-100">
+                        <div class="stack-header">
+                            <span class="icon me-2">📊</span> BACKEND
+                        </div>
+                        <div class="stack-body">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-name">Python</div>
+                                    <div class="skill-exp">Experience: 5 yrs</div>
+                                </div>
+                                <span class="badge-skill">Expert</span>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-name">Django</div>
+                                    <div class="skill-exp">Experience: 4 yrs</div>
+                                </div>
+                                <span class="badge-skill">Expert</span>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-name">Django Rest Framework</div>
+                                    <div class="skill-exp">Experience: 4 yrs</div>
+                                </div>
+                                <span class="badge-skill">Expert</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+                    <div class="stack-column h-100">
+                        <div class="stack-header">
+                            <span class="icon me-2">🌐</span> FRONTEND
+                        </div>
+                        <div class="stack-body">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-name">Html</div>
+                                    <div class="skill-exp">Experience: 2 yrs</div>
+                                </div>
+                                <span class="badge-skill">Intermediate</span>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-name">JS</div>
+                                    <div class="skill-exp">Experience: 2 yrs</div>
+                                </div>
+                                <span class="badge-skill">Intermediate</span>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-name">CSS</div>
+                                    <div class="skill-exp">Experience: 2 yrs</div>
+                                </div>
+                                <span class="badge-skill">Intermediate</span>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-name">
+                                        Bootstrtap
+                                    </div>
+                                    <div class="skill-exp">Experience: 2 yrs</div>
+                                </div>
+                                <span class="badge-skill">Intermediate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+                    <div class="stack-column h-100">
+                        <div class="stack-header">
+                            <span class="icon me-2">📁</span> DATABASE
+                        </div>
+                        <div class="stack-body">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-name">PostgreSQL</div>
+                                    <div class="skill-exp">Experience: 4 yrs</div>
+                                </div>
+                                <span class="badge-skill">Advanced</span>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-name">SqLite</div>
+                                    <div class="skill-exp">Experience: 4 yrs</div>
+                                </div>
+                                <span class="badge-skill">Advanced</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+                    <div class="stack-column h-100">
+                        <div class="stack-header">
+                            <span class="icon me-2">⚙️</span> TOOLS & DEVOPS
+                        </div>
+                        <div class="stack-body">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-name">Docker</div>
+                                    <div class="skill-exp">Experience: 3 yrs</div>
+                                </div>
+                                <span class="badge-skill">Advanced</span>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-name">Git & github</div>
+                                    <div class="skill-exp">Experience: 3 yrs</div>
+                                </div>
+                                <span class="badge-skill">Advanced</span>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-name">Postman</div>
+                                    <div class="skill-exp">Experience: 3 yrs</div>
+                                </div>
+                                <span class="badge-skill">Advanced</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
 </body>
+
 </html>
