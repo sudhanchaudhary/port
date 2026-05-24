@@ -258,3 +258,57 @@ body {
 .font-monospace {
     font-family: 'Fira Code', monospace;
 }
+
+/* Portfolio Dashboard Styling */
+#github-dashboard {
+    background-color: #0d1117;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+.ls-2 { letter-spacing: 2px; }
+
+.text-primary {
+    color: #39d353 !important; /* GitHub Signature Green */
+}
+
+.dev-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.gh-heatmap {
+    border-radius: 4px;
+    background: #0d1117;
+    padding: 15px;
+    transition: opacity 0.3s;
+}
+
+.repo-item {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.repo-item:hover {
+    border-color: #39d353;
+    transform: translateY(-5px);
+    background: #1c2128;
+}
+
+.btn-outline-primary {
+    color: #39d353;
+    border-color: #39d353;
+}
+
+.btn-outline-primary:hover {
+    background-color: #39d353;
+    border-color: #39d353;
+    color: #0d1117;
+}
+
