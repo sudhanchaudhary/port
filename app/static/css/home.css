@@ -312,3 +312,113 @@ body {
     color: #0d1117;
 }
 
+/* --- SECTION WRAPPER & GRID BACKGROUND --- */
+#projects {
+    background-color: #0d1117;
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-grid {
+    background-image: radial-gradient(#30363d 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+/* Vignette effect to fade grid at edges */
+.bg-grid::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at center, transparent 0%, #0d1117 85%);
+    pointer-events: none;
+}
+
+.container.position-relative {
+    z-index: 2;
+}
+
+/* --- BUTTONS & TYPOGRAPHY --- */
+.ls-2 { letter-spacing: 2px; }
+.ls-1 { letter-spacing: 1px; }
+.x-small { font-size: 0.7rem; }
+.text-primary { color: #58a6ff !important; }
+
+.btn-archive {
+    color: #8b949e;
+    border: 1px solid #30363d;
+    background-color: #21262d;
+    transition: 0.2s;
+}
+
+.btn-archive:hover {
+    background-color: #30363d;
+    color: #f0f6fc;
+    border-color: #8b949e;
+}
+
+/* --- PROJECT CARDS --- */
+.project-card {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 2rem;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: #58a6ff;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+.project-icon-box {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.repo-tag {
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    color: #8b949e;
+    padding: 4px 10px;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 11px;
+}
+
+/* --- LISTS & TAGS --- */
+.feature-item {
+    font-size: 13px;
+    color: #8b949e;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.feature-item i {
+    font-size: 5px;
+    margin-right: 12px;
+    color: #3fb950; /* GitHub Green */
+}
+
+.tech-tag {
+    background-color: #21262d;
+    color: #8b949e;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    border: 1px solid #30363d;
+}
+
+.border-top-dark {
+    border-top: 1px solid #30363d !important;
+}
+
+.hover-link:hover {
+    color: #58a6ff !important;
+}
