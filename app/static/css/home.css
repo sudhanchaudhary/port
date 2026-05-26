@@ -422,3 +422,83 @@ body {
 .hover-link:hover {
     color: #58a6ff !important;
 }
+
+/* --- CONTACT SECTION (NO GRID) --- */
+
+.bg-dark-custom {
+    background-color: #0d1117; /* Solid Dark */
+}
+
+/* Card Styling */
+.contact-card {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+}
+
+.contact-icon-box {
+    width: 42px;
+    height: 42px;
+    background-color: #21262d;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Inputs */
+.custom-input {
+    background-color: #0d1117 !important;
+    border: 1px solid #30363d !important;
+    color: #f0f6fc !important;
+    padding: 12px 16px;
+    border-radius: 8px;
+}
+
+.custom-input:focus {
+    border-color: #58a6ff !important;
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1) !important;
+    outline: none;
+}
+
+.custom-input::placeholder {
+    color: #484f58;
+}
+
+/* Handshake Button - Matches your image blue */
+.btn-primary-handshake {
+    background-color: #2f81f7;
+    border: 1px solid rgba(240, 246, 252, 0.1);
+    color: white;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.btn-primary-handshake:hover {
+    background-color: #4493f8;
+}
+
+/* Social Buttons */
+.btn-social {
+    background-color: #21262d;
+    border: 1px solid #30363d;
+    color: #8b949e;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.btn-social:hover {
+    background-color: #30363d;
+    color: #f0f6fc;
+}
+
+/* Helpers */
+.ls-2 { letter-spacing: 2px; }
+.ls-1 { letter-spacing: 1px; }
+.x-small { font-size: 0.7rem; }
+.text-primary { color: #58a6ff !important; }
+.text-success { color: #3fb950 !important; }
+.hover-primary:hover { color: #58a6ff !important; }

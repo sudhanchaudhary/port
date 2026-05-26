@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hero Section - Developer Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap"
         rel="stylesheet">
@@ -33,7 +35,7 @@
                 </ul>
             </div>
             <div class="d-flex gap-3">
-                <a href="#" class="btn btn-dark-glass btn-sm px-3">GitHub</a>
+                <a href="https://github.com/sudhanchaudhary" class="btn btn-dark-glass btn-sm px-3">GitHub</a>
                 <a href="#" class="btn btn-primary btn-sm px-3">Resume</a>
             </div>
         </div>
@@ -345,101 +347,195 @@
 
     <!-- project section -->
     <section id="projects" class="py-5 bg-dark-custom bg-grid">
-    <div class="container position-relative">
-        
-        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5">
-            <div class="mb-3 mb-md-0">
-                <h6 class="text-primary fw-bold text-uppercase ls-2">04 // Demonstrated Work</h6>
-                <h2 class="text-white fw-bold display-5">Featured Systems</h2>
-                <p class="text-secondary mb-0">Architecture-focused case studies representing live backend platforms.</p>
+        <div class="container position-relative">
+
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5">
+                <div class="mb-3 mb-md-0">
+                    <h6 class="text-primary fw-bold text-uppercase ls-2">04 // Demonstrated Work</h6>
+                    <h2 class="text-white fw-bold display-5">Featured Systems</h2>
+                    <p class="text-secondary mb-0">Architecture-focused case studies representing live backend
+                        platforms.</p>
+                </div>
+                <div>
+                </div>
             </div>
-            <div>
+
+            <div class="row g-4" id="project-list">
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div class="project-icon-box">
+                                <i class="far fa-folder-open text-primary fs-4"></i>
+                            </div>
+
+                        </div>
+
+                        <h4 class="text-white fw-bold mb-3">Car Rental Platform</h4>
+                        <p class="text-secondary small mb-4">
+                            Django-based enterprise dashboard featuring structured RESTful APIs, strict database
+                            constraints, and Stripe-backed bookings.
+                        </p>
+
+                        <h6 class="text-uppercase text-white-50 x-small fw-bold ls-1 mb-2">Key Architecture & Features
+                        </h6>
+                        <ul class="list-unstyled mb-4">
+                            <li class="feature-item"><i class="fas fa-circle"></i>JWT Secure Authentication</li>
+                            <li class="feature-item"><i class="fas fa-circle"></i>Advanced Review Logic</li>
+                            <li class="feature-item"><i class="fas fa-circle"></i>Mock Stripe Webhook Flow</li>
+                        </ul>
+
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+
+                        <div class="mt-auto pt-3 border-top-dark d-flex gap-4">
+                            <a href="#" class="text-secondary text-decoration-none small hover-link">
+                                <i class="fab fa-github me-1"></i> Repository
+                            </a>
+                            <a href="#" class="text-secondary text-decoration-none small hover-link">
+                                <i class="fas fa-external-link-alt me-1"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div class="project-icon-box">
+                                <i class="far fa-folder-open text-primary fs-4"></i>
+                            </div>
+
+                        </div>
+
+                        <h4 class="text-white fw-bold mb-3">Internship Evaluation</h4>
+                        <p class="text-secondary small mb-4">
+                            An automated concept API engine leveraging LLMs to evaluate student code submissions and
+                            grading scores.
+                        </p>
+
+                        <h6 class="text-uppercase text-white-50 x-small fw-bold ls-1 mb-2">Key Architecture & Features
+                        </h6>
+                        <ul class="list-unstyled mb-4">
+                            <li class="feature-item"><i class="fas fa-circle"></i>AI Code Analysis</li>
+                            <li class="feature-item"><i class="fas fa-circle"></i>Real-time Analytics Feed</li>
+                            <li class="feature-item"><i class="fas fa-circle"></i>Robust Sandboxing</li>
+                        </ul>
+
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <span class="tech-tag">Django REST</span>
+                            <span class="tech-tag">Celery</span>
+                            <span class="tech-tag">Redis</span>
+                            <span class="tech-tag">React</span>
+                        </div>
+
+                        <div class="mt-auto pt-3 border-top-dark d-flex gap-4">
+                            <a href="#" class="text-secondary text-decoration-none small hover-link">
+                                <i class="fab fa-github me-1"></i> Repository
+                            </a>
+                            <a href="#" class="text-secondary text-decoration-none small hover-link">
+                                <i class="fas fa-external-link-alt me-1"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
+    </section>
+    <!-- contact section -->
+    <section id="contact" class="py-5 bg-dark-custom">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
 
-        <div class="row g-4" id="project-list">
-            
-            <div class="col-lg-4 col-md-6">
-                <div class="project-card">
-                    <div class="d-flex justify-content-between align-items-start mb-3">
-                        <div class="project-icon-box">
-                            <i class="far fa-folder-open text-primary fs-4"></i>
-                        </div>
-                        
-                    </div>
-
-                    <h4 class="text-white fw-bold mb-3">Car Rental Platform</h4>
-                    <p class="text-secondary small mb-4">
-                        Django-based enterprise dashboard featuring structured RESTful APIs, strict database constraints, and Stripe-backed bookings.
+                <div class="col-lg-6">
+                    <h6 class="text-primary fw-bold text-uppercase ls-2 mb-3">05 // Handshake</h6>
+                    <h2 class="text-white fw-bold display-5 mb-4">Let’s build scalable systems together.</h2>
+                    <p class="text-secondary mb-5 fs-5">
+                        I'm currently accepting freelance contracts and consulting engagements. Reach out if you need
+                        reliable API infrastructure, custom Django apps, or a robust database overhaul.
                     </p>
 
-                    <h6 class="text-uppercase text-white-50 x-small fw-bold ls-1 mb-2">Key Architecture & Features</h6>
-                    <ul class="list-unstyled mb-4">
-                        <li class="feature-item"><i class="fas fa-circle"></i>JWT Secure Authentication</li>
-                        <li class="feature-item"><i class="fas fa-circle"></i>Advanced Review Logic</li>
-                        <li class="feature-item"><i class="fas fa-circle"></i>Mock Stripe Webhook Flow</li>
-                    </ul>
-
-                    <div class="d-flex flex-wrap gap-2 mb-4">
-                        <span class="tech-tag">Django</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">PostgreSQL</span>
-                        <span class="tech-tag">Docker</span>
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="contact-icon-box me-3">
+                            <i class="far fa-envelope text-primary"></i>
+                        </div>
+                        <div>
+                            <small class="text-secondary d-block text-uppercase x-small ls-1">Direct Email</small>
+                            <a href="mailto:madhusudhan.chy007@gmail.com"
+                                class="text-white text-decoration-none fw-bold">madhusudhan.chy007@gmail.com</a>
+                        </div>
                     </div>
 
-                    <div class="mt-auto pt-3 border-top-dark d-flex gap-4">
-                        <a href="#" class="text-secondary text-decoration-none small hover-link">
-                            <i class="fab fa-github me-1"></i> Repository
+                    <div class="d-flex align-items-center mb-5">
+                        <div class="contact-icon-box me-3">
+                            <i class="fas fa-map-marker-alt text-primary"></i>
+                        </div>
+                        <div>
+                            <small class="text-secondary d-block text-uppercase x-small ls-1">Location /
+                                Timezone</small>
+                            <span class="text-white fw-bold">Sirutar, Bhaktapur</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-3">
+                        <a href="https://www.linkedin.com/in/madhusudhan-chaudhary/" class="btn btn-social">
+                            <i class="fab fa-linkedin-in me-2"></i> LinkedIn
                         </a>
-                        <a href="#" class="text-secondary text-decoration-none small hover-link">
-                            <i class="fas fa-external-link-alt me-1"></i> Live Demo
+                        <a href="https://github.com/sudhanchaudhary" class="btn btn-social">
+                            <i class="fab fa-github me-2"></i> GitHub
                         </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="contact-card p-4 p-md-5">
+                        <h4 class="text-white fw-bold mb-1">Send a Message</h4>
+                        <p class="text-secondary small mb-4">Typically responds within 12 hours.</p>
+
+                        <form id="contact-form">
+                            <div class="mb-4">
+                                <label class="form-label text-secondary text-uppercase x-small fw-bold ls-1">Full
+                                    Name</label>
+                                <input type="text" class="form-control custom-input" placeholder="e.g., Jane Doe"
+                                    required>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label text-secondary text-uppercase x-small fw-bold ls-1">Email
+                                    Address</label>
+                                <input type="email" class="form-control custom-input"
+                                    placeholder="e.g., jane@example.com" required>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label text-secondary text-uppercase x-small fw-bold ls-1">Message /
+                                    Project Details</label>
+                                <textarea class="form-control custom-input" rows="4"
+                                    placeholder="Describe your project scope..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary-handshake w-100 py-3 fw-bold">
+                                <i class="fas fa-paper-plane me-2"></i> Establish Handshake (Send Message)
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6">
-                <div class="project-card">
-                    <div class="d-flex justify-content-between align-items-start mb-3">
-                        <div class="project-icon-box">
-                            <i class="far fa-folder-open text-primary fs-4"></i>
-                        </div>
-                        
-                    </div>
-
-                    <h4 class="text-white fw-bold mb-3">Internship Evaluation</h4>
-                    <p class="text-secondary small mb-4">
-                        An automated concept API engine leveraging LLMs to evaluate student code submissions and grading scores.
-                    </p>
-
-                    <h6 class="text-uppercase text-white-50 x-small fw-bold ls-1 mb-2">Key Architecture & Features</h6>
-                    <ul class="list-unstyled mb-4">
-                        <li class="feature-item"><i class="fas fa-circle"></i>AI Code Analysis</li>
-                        <li class="feature-item"><i class="fas fa-circle"></i>Real-time Analytics Feed</li>
-                        <li class="feature-item"><i class="fas fa-circle"></i>Robust Sandboxing</li>
-                    </ul>
-
-                    <div class="d-flex flex-wrap gap-2 mb-4">
-                        <span class="tech-tag">Django REST</span>
-                        <span class="tech-tag">Celery</span>
-                        <span class="tech-tag">Redis</span>
-                        <span class="tech-tag">React</span>
-                    </div>
-
-                    <div class="mt-auto pt-3 border-top-dark d-flex gap-4">
-                        <a href="#" class="text-secondary text-decoration-none small hover-link">
-                            <i class="fab fa-github me-1"></i> Repository
-                        </a>
-                        <a href="#" class="text-secondary text-decoration-none small hover-link">
-                            <i class="fas fa-external-link-alt me-1"></i> Live Demo
-                        </a>
-                    </div>
+            <div
+                class="footer-bottom mt-5 pt-5 border-top border-dark d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <p class="text-secondary small mb-0">© 2024 Madhusudhan Chaudhary. All rights reserved.</p>
+                <div class="d-flex gap-4 align-items-center text-secondary small">
+                    <a href="#" class="text-decoration-none hover-primary">Security Policy</a>
+                    <a href="#" class="text-decoration-none hover-primary">System Status</a>
+                    <span class="text-success fw-bold"><i class="fas fa-circle x-small me-1"></i> All Systems
+                        Operational</span>
                 </div>
             </div>
-
         </div>
-    </div>
-</section>
+    </section>
     <!-- js -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
