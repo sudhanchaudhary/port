@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import Message
+from django.shortcuts import render,redirect
+from .models import Message,Portfolio
 from django.contrib import messages
 # Create your views here.
 def home(request):
@@ -9,6 +9,10 @@ def home(request):
         msg=request.POST.get('msg')        
         Message.objects.create(name=name,email=email,message=msg)
         messages.success(request,"Message Sent Successfully.")
-            
-    return render(request,'home.html')
+        return redirect('home')
+    resume=Portfolio.objects.first()
+    context={
+        'resume':resume
+    }
+    return render(request,'home.html',context)
 

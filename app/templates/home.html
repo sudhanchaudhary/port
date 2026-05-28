@@ -28,16 +28,16 @@
             </a>
             <div class="collapse navbar-collapse justify-content-center">
                 <ul class="navbar-nav gap-4">
-                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">GitHub</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#github-dashboard">GitHub</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
             <div class="d-flex gap-3">
-                <a href="https://github.com/sudhanchaudhary" class="btn btn-dark-glass btn-sm px-3">GitHub</a>
-                <a href="#" class="btn btn-primary btn-sm px-3">Resume</a>
+                <a href="https://github.com/sudhanchaudhary" target="blank" class="btn btn-dark-glass btn-sm px-3">GitHub</a>
+                <a href="{{resume.resume.url}}" download class="btn btn-primary btn-sm px-3">Resume</a>
             </div>
         </div>
     </nav>
@@ -58,8 +58,8 @@
                         Focused on performance, clean architecture, and scalable APIs.
                     </p>
                     <div class="d-flex gap-3">
-                        <button class="btn btn-primary btn-lg px-4 fs-6">&lt; &gt; View Projects</button>
-                        <button class="btn btn-dark-glass btn-lg px-4 fs-6">Contact Me</button>
+                        <a href="#projects"><button class="btn btn-primary btn-lg px-4 fs-6">&lt; &gt; View Projects</button></a>
+                        <a href="#contact"><button class="btn btn-dark-glass btn-lg px-4 fs-6">Contact Me</button></a>
                     </div>
                 </div>
 
@@ -92,7 +92,7 @@
             </div>
         </div>
     </section>
-    <section class="about-section py-5 position-relative">
+    <section class="about-section py-5 position-relative" id="about">
         <div class="container py-5">
             <div class="row align-items-start g-5">
 
@@ -135,7 +135,7 @@
             </div>
         </div>
     </section>
-    <section class="stack-section py-5">
+    <section class="stack-section py-5" id="skills">
         <div class="container py-5">
             <div class="mb-5">
                 <p class="text-primary fw-bold font-monospace mb-1">02 // CAPABILITIES</p>
@@ -347,7 +347,7 @@
     </section>
 
     <!-- project section -->
-    <section id="projects" class="py-5 bg-dark-custom bg-grid">
+    <section id="projects" class="py-5 bg-dark-custom bg-grid" id="projects">
         <div class="container position-relative">
 
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5">
@@ -484,10 +484,10 @@
                     </div>
 
                     <div class="d-flex gap-3">
-                        <a href="https://www.linkedin.com/in/madhusudhan-chaudhary/" class="btn btn-social">
+                        <a href="https://www.linkedin.com/in/madhusudhan-chaudhary/" target="blank" class="btn btn-social">
                             <i class="fab fa-linkedin-in me-2"></i> LinkedIn
                         </a>
-                        <a href="https://github.com/sudhanchaudhary" class="btn btn-social">
+                        <a href="https://github.com/sudhanchaudhary" target="blank" class="btn btn-social">
                             <i class="fab fa-github me-2"></i> GitHub
                         </a>
                     </div>
