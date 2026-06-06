@@ -25,7 +25,7 @@ class Skill(models.Model):
     ('Intermediate','Intermediate'),
     ('Expert','Expert')
      )
-    tech=models.ForeignKey(TechCategory, on_delete=models.CASCADE)
+    tech=models.ForeignKey(TechCategory, on_delete=models.CASCADE,related_name='skills')
     skill=models.CharField(max_length=200)
     experience=models.IntegerField(default='1')
     level=models.CharField(choices=Skill_Level)

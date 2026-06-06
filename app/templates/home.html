@@ -8,7 +8,7 @@
     <title>Madhusudhan - Developer Portfolio</title>
     <link rel="icon" href="{% static 'images/plogo/favicon.ico' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -37,7 +37,8 @@
                 </ul>
             </div>
             <div class="d-flex gap-3">
-                <a href="https://github.com/sudhanchaudhary" target="blank" class="btn btn-dark-glass btn-sm px-3">GitHub</a>
+                <a href="https://github.com/sudhanchaudhary" target="blank"
+                    class="btn btn-dark-glass btn-sm px-3">GitHub</a>
                 <a href="{{resume.resume.url}}" download class="btn btn-primary btn-sm px-3">Resume</a>
             </div>
         </div>
@@ -59,7 +60,8 @@
                         Focused on performance, clean architecture, and scalable APIs.
                     </p>
                     <div class="d-flex gap-3">
-                        <a href="#projects"><button class="btn btn-primary btn-lg px-4 fs-6">&lt; &gt; View Projects</button></a>
+                        <a href="#projects"><button class="btn btn-primary btn-lg px-4 fs-6">&lt; &gt; View
+                                Projects</button></a>
                         <a href="#contact"><button class="btn btn-dark-glass btn-lg px-4 fs-6">Contact Me</button></a>
                     </div>
                 </div>
@@ -136,6 +138,7 @@
             </div>
         </div>
     </section>
+    <!-- skills section  -->
     <section class="stack-section py-5" id="skills">
         <div class="container py-5">
             <div class="mb-5">
@@ -145,132 +148,28 @@
             </div>
 
             <div class="row g-4">
-                <div class="col-xl-3 col-md-6">
-                    <div class="stack-column h-100">
-                        <div class="stack-header">
-                            <span class="icon me-2">📊</span> BACKEND
-                        </div>
-                        <div class="stack-body">
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-name">Python</div>
-                                    <div class="skill-exp">Experience: 5 yrs</div>
-                                </div>
-                                <span class="badge-skill">Expert</span>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-name">Django</div>
-                                    <div class="skill-exp">Experience: 4 yrs</div>
-                                </div>
-                                <span class="badge-skill">Expert</span>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-name">Django Rest Framework</div>
-                                    <div class="skill-exp">Experience: 4 yrs</div>
-                                </div>
-                                <span class="badge-skill">Expert</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% for i in cate %}
+
 
                 <div class="col-xl-3 col-md-6">
                     <div class="stack-column h-100">
                         <div class="stack-header">
-                            <span class="icon me-2">🌐</span> FRONTEND
+                            <span class="icon me-2"></span> {{i.title}}
                         </div>
                         <div class="stack-body">
+                            {% for j in i.skills.all %}
                             <div class="skill-item">
                                 <div class="skill-info">
-                                    <div class="skill-name">Html</div>
-                                    <div class="skill-exp">Experience: 2 yrs</div>
+                                    <div class="skill-name">{{j.skill}}</div>
+                                    <div class="skill-exp">Experience: {{j.experience}} yrs</div>
                                 </div>
-                                <span class="badge-skill">Intermediate</span>
+                                <span class="badge-skill">{{j.level}}t</span>
                             </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-name">JS</div>
-                                    <div class="skill-exp">Experience: 2 yrs</div>
-                                </div>
-                                <span class="badge-skill">Intermediate</span>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-name">CSS</div>
-                                    <div class="skill-exp">Experience: 2 yrs</div>
-                                </div>
-                                <span class="badge-skill">Intermediate</span>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-name">
-                                        Bootstrtap
-                                    </div>
-                                    <div class="skill-exp">Experience: 2 yrs</div>
-                                </div>
-                                <span class="badge-skill">Intermediate</span>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
-
-                <div class="col-xl-3 col-md-6">
-                    <div class="stack-column h-100">
-                        <div class="stack-header">
-                            <span class="icon me-2">📁</span> DATABASE
-                        </div>
-                        <div class="stack-body">
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-name">PostgreSQL</div>
-                                    <div class="skill-exp">Experience: 4 yrs</div>
-                                </div>
-                                <span class="badge-skill">Advanced</span>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-name">SqLite</div>
-                                    <div class="skill-exp">Experience: 4 yrs</div>
-                                </div>
-                                <span class="badge-skill">Advanced</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-3 col-md-6">
-                    <div class="stack-column h-100">
-                        <div class="stack-header">
-                            <span class="icon me-2">⚙️</span> TOOLS & DEVOPS
-                        </div>
-                        <div class="stack-body">
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-name">Docker</div>
-                                    <div class="skill-exp">Experience: 3 yrs</div>
-                                </div>
-                                <span class="badge-skill">Advanced</span>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-name">Git & github</div>
-                                    <div class="skill-exp">Experience: 3 yrs</div>
-                                </div>
-                                <span class="badge-skill">Advanced</span>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <div class="skill-name">Postman</div>
-                                    <div class="skill-exp">Experience: 3 yrs</div>
-                                </div>
-                                <span class="badge-skill">Advanced</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -363,6 +262,7 @@
             </div>
 
             <div class="row g-4" id="project-list">
+                {% for i in project %}
 
                 <div class="col-lg-4 col-md-6">
                     <div class="project-card">
@@ -373,79 +273,43 @@
 
                         </div>
 
-                        <h4 class="text-white fw-bold mb-3">Car Rental Platform</h4>
+
+                        <h4 class="text-white fw-bold mb-3">{{i.title}}</h4>
                         <p class="text-secondary small mb-4">
-                            Django-based enterprise dashboard featuring structured RESTful APIs, strict database
-                            constraints, and Stripe-backed bookings.
+                            {{i.desc|truncatewords:25}}
                         </p>
 
                         <h6 class="text-uppercase text-white-50 x-small fw-bold ls-1 mb-2">Key Architecture & Features
                         </h6>
                         <ul class="list-unstyled mb-4">
-                            <li class="feature-item"><i class="fas fa-circle"></i>JWT Secure Authentication</li>
-                            <li class="feature-item"><i class="fas fa-circle"></i>Advanced Review Logic</li>
-                            <li class="feature-item"><i class="fas fa-circle"></i>Mock Stripe Webhook Flow</li>
+                            {% for j in i.feature.all %}
+                            <li class="feature-item"><i class="fas fa-circle"></i>{{j.feature}}</li>
+                            {% endfor %}
                         </ul>
 
                         <div class="d-flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag">Django</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">Docker</span>
+                            {% for j in i.skill.all %}
+                            <span class="tech-tag">{{j.skill}}</span>
+                            {% endfor %}
                         </div>
 
                         <div class="mt-auto pt-3 border-top-dark d-flex gap-4">
-                            <a href="#" class="text-secondary text-decoration-none small hover-link">
+                            {% if i.github %}
+                            <a href="{{i.github}}" class="text-secondary text-decoration-none small hover-link">
                                 <i class="fab fa-github me-1"></i> Repository
                             </a>
-                            <a href="#" class="text-secondary text-decoration-none small hover-link">
+                            {% endif %}
+                            {% if i.live %}
+
+
+                            <a href="{{i.live}}" class="text-secondary text-decoration-none small hover-link">
                                 <i class="fas fa-external-link-alt me-1"></i> Live Demo
                             </a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="project-card">
-                        <div class="d-flex justify-content-between align-items-start mb-3">
-                            <div class="project-icon-box">
-                                <i class="far fa-folder-open text-primary fs-4"></i>
-                            </div>
-
-                        </div>
-
-                        <h4 class="text-white fw-bold mb-3">Internship Evaluation</h4>
-                        <p class="text-secondary small mb-4">
-                            An automated concept API engine leveraging LLMs to evaluate student code submissions and
-                            grading scores.
-                        </p>
-
-                        <h6 class="text-uppercase text-white-50 x-small fw-bold ls-1 mb-2">Key Architecture & Features
-                        </h6>
-                        <ul class="list-unstyled mb-4">
-                            <li class="feature-item"><i class="fas fa-circle"></i>AI Code Analysis</li>
-                            <li class="feature-item"><i class="fas fa-circle"></i>Real-time Analytics Feed</li>
-                            <li class="feature-item"><i class="fas fa-circle"></i>Robust Sandboxing</li>
-                        </ul>
-
-                        <div class="d-flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag">Django REST</span>
-                            <span class="tech-tag">Celery</span>
-                            <span class="tech-tag">Redis</span>
-                            <span class="tech-tag">React</span>
-                        </div>
-
-                        <div class="mt-auto pt-3 border-top-dark d-flex gap-4">
-                            <a href="#" class="text-secondary text-decoration-none small hover-link">
-                                <i class="fab fa-github me-1"></i> Repository
-                            </a>
-                            <a href="#" class="text-secondary text-decoration-none small hover-link">
-                                <i class="fas fa-external-link-alt me-1"></i> Live Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -485,7 +349,8 @@
                     </div>
 
                     <div class="d-flex gap-3">
-                        <a href="https://www.linkedin.com/in/madhusudhan-chaudhary/" target="blank" class="btn btn-social">
+                        <a href="https://www.linkedin.com/in/madhusudhan-chaudhary/" target="blank"
+                            class="btn btn-social">
                             <i class="fab fa-linkedin-in me-2"></i> LinkedIn
                         </a>
                         <a href="https://github.com/sudhanchaudhary" target="blank" class="btn btn-social">
@@ -504,8 +369,8 @@
                             <div class="mb-4">
                                 <label class="form-label text-secondary text-uppercase x-small fw-bold ls-1">Full
                                     Name</label>
-                                <input type="text" class="form-control custom-input" name="name" placeholder="e.g., Jane Doe"
-                                    required>
+                                <input type="text" class="form-control custom-input" name="name"
+                                    placeholder="e.g., Jane Doe" required>
                             </div>
                             <div class="mb-4">
                                 <label class="form-label text-secondary text-uppercase x-small fw-bold ls-1">Email
@@ -529,7 +394,7 @@
 
             <div
                 class="footer-bottom mt-5 pt-5 border-top border-dark d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-                <p class="text-secondary small mb-0">© 2024 Madhusudhan Chaudhary. All rights reserved.</p>
+                <p class="text-secondary small mb-0">© {% now "Y" %} Madhusudhan Chaudhary. All rights reserved.</p>
                 <div class="d-flex gap-4 align-items-center text-secondary small">
                     <a href="#" class="text-decoration-none hover-primary">Security Policy</a>
                     <a href="#" class="text-decoration-none hover-primary">System Status</a>
@@ -540,119 +405,164 @@
         </div>
     </section>
     <!-- js -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const username = 'sudhanchaudhary';
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const username = 'sudhanchaudhary';
 
-            // GitHub Standard Language Colors
-            const langColors = {
-                'JavaScript': '#f1e05a', 'Python': '#3572A5', 'HTML': '#e34c26',
-                'CSS': '#563d7c', 'TypeScript': '#3178c6', 'Java': '#b07219'
-            };
+        const langColors = {
+            JavaScript: '#f1e05a',
+            Python: '#3572A5',
+            HTML: '#e34c26',
+            CSS: '#563d7c',
+            TypeScript: '#3178c6',
+            Java: '#b07219',
+            PHP: '#4F5D95',
+            'C++': '#f34b7d',
+            C: '#555555',
+            'C#': '#178600',
+            Shell: '#89e051',
+            Vue: '#41b883',
+            Dart: '#00B4AB',
+            Kotlin: '#A97BFF'
+        };
 
-            async function initPortfolio() {
-                try {
-                    // 1. Fetch Profile & Repos (Combined logic to save requests)
-                    const [userRes, repoRes] = await Promise.all([
-                        fetch(`https://api.github.com/users/${username}`),
-                        fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=10`)
-                    ]);
+        async function initPortfolio() {
+            try {
+                const [userRes, repoRes] = await Promise.all([
+                    fetch(`https://api.github.com/users/${username}`),
+                    fetch(`https://api.github.com/users/${username}/repos?sort=updated&direction=desc&per_page=30`)
+                ]);
 
-                    if (userRes.status === 403 || repoRes.status === 403) {
-                        throw new Error('Rate Limit');
-                    }
-
-                    const user = await userRes.json();
-                    const repos = await repoRes.json();
-
-                    // Update Header
-                    document.getElementById('gh-bio').innerText = user.bio || "Full Stack Developer";
-                    document.getElementById('gh-repos').innerText = user.public_repos;
-                    document.getElementById('gh-followers').innerText = user.followers;
-
-                    // 2. Process Languages (Optimized: No extra API calls)
-                    processLanguages(repos);
-
-                    // 3. Render Repos
-                    renderRepos(repos.slice(0, 3));
-
-                    // 4. Load Grid
-                    fetchAndRenderContributions();
-
-                } catch (err) {
-                    console.error("GitHub Sync Error:", err);
-                    handleFallback();
+                if (!userRes.ok || !repoRes.ok) {
+                    throw new Error(`GitHub API error: user ${userRes.status}, repos ${repoRes.status}`);
                 }
+
+                const user = await userRes.json();
+                const repos = await repoRes.json();
+                const activeRepos = repos.filter(repo => !repo.fork && !repo.archived);
+
+                document.getElementById('gh-bio').innerText = user.bio || 'Full Stack Developer';
+                document.getElementById('gh-repos').innerText = user.public_repos ?? '--';
+                document.getElementById('gh-followers').innerText = user.followers ?? '--';
+
+                await processLanguages(activeRepos);
+                renderRepos(activeRepos.slice(0, 3));
+
+                if (typeof fetchAndRenderContributions === 'function') {
+                    fetchAndRenderContributions();
+                }
+            } catch (err) {
+                console.error('GitHub Sync Error:', err);
+                handleFallback();
+            }
+        }
+
+        async function processLanguages(repos) {
+            const langTotals = {};
+
+            const languageResponses = await Promise.allSettled(
+                repos.slice(0, 20).map(repo =>
+                    fetch(repo.languages_url).then(res => {
+                        if (!res.ok) {
+                            throw new Error(`Language API error for ${repo.name}: ${res.status}`);
+                        }
+
+                        return res.json();
+                    })
+                )
+            );
+
+            languageResponses.forEach(result => {
+                if (result.status !== 'fulfilled') {
+                    return;
+                }
+
+                Object.entries(result.value).forEach(([name, bytes]) => {
+                    langTotals[name] = (langTotals[name] || 0) + bytes;
+                });
+            });
+
+            const sorted = Object.entries(langTotals).sort((a, b) => b[1] - a[1]);
+            const total = sorted.reduce((sum, [, bytes]) => sum + bytes, 0);
+            const progressBar = document.getElementById('lang-progress-bar');
+            const langList = document.getElementById('lang-list');
+
+            progressBar.innerHTML = '';
+            langList.innerHTML = '';
+
+            if (!total) {
+                progressBar.innerHTML = '<div class="progress-bar" style="width: 100%; background-color: #30363d"></div>';
+                langList.innerHTML = '<li class="text-secondary small">No primary languages found yet.</li>';
+                return;
             }
 
-            function processLanguages(repos) {
-                const langCounts = {};
-                let total = 0;
+            sorted.slice(0, 6).forEach(([name, bytes]) => {
+                const pct = ((bytes / total) * 100).toFixed(1);
+                const color = langColors[name] || '#8b949e';
 
-                repos.forEach(repo => {
-                    if (repo.language) {
-                        langCounts[repo.language] = (langCounts[repo.language] || 0) + 1;
-                        total++;
-                    }
-                });
+                progressBar.insertAdjacentHTML(
+                    'beforeend',
+                    `<div class="progress-bar" title="${name} ${pct}%" style="width: ${pct}%; background-color: ${color}"></div>`
+                );
 
-                const sorted = Object.entries(langCounts).sort((a, b) => b[1] - a[1]);
-                const progressBar = document.getElementById('lang-progress-bar');
-                const langList = document.getElementById('lang-list');
+                langList.insertAdjacentHTML(
+                    'beforeend',
+                    `
+                    <li class="d-flex justify-content-between mb-3 small">
+                        <span class="text-secondary">
+                            <i class="fas fa-circle me-2" style="color:${color}"></i>${name}
+                        </span>
+                        <span class="text-white fw-bold">${pct}%</span>
+                    </li>
+                    `
+                );
+            });
+        }
 
-                progressBar.innerHTML = '';
-                langList.innerHTML = '';
+        function renderRepos(repos) {
+            const container = document.getElementById('repo-container');
 
-                sorted.forEach(([name, count]) => {
-                    const pct = ((count / total) * 100).toFixed(1);
-                    const color = langColors[name] || '#8b949e';
-                    progressBar.innerHTML += `<div class="progress-bar" style="width: ${pct}%; background-color: ${color}"></div>`;
-                    langList.innerHTML += `
-                <li class="d-flex justify-content-between mb-3 small">
-                    <span class="text-secondary"><i class="fas fa-circle me-2" style="color:${color}"></i>${name}</span>
-                    <span class="text-white fw-bold">${pct}%</span>
-                </li>`;
-                });
+            if (!repos.length) {
+                container.innerHTML = '<div class="col-12 text-center py-4"><p class="text-secondary mb-0">No recent public repositories found.</p></div>';
+                return;
             }
 
-            function renderRepos(repos) {
-                const container = document.getElementById('repo-container');
-                container.innerHTML = repos.map(repo => `
-            <div class="col-md-4">
-                <div class="repo-item p-3 h-100">
-                    <h6 class="text-white mb-2"><i class="far fa-folder me-2 text-primary"></i>${repo.name}</h6>
-                    <p class="text-secondary small mb-3">${repo.description || 'Active development project.'}</p>
-                    <div class="d-flex gap-3 text-secondary small mt-auto">
-                        <span><i class="fas fa-circle text-primary small me-1"></i> ${repo.language || 'Mixed'}</span>
-                        <span><i class="far fa-star me-1"></i> ${repo.stargazers_count}</span>
+            container.innerHTML = repos.map(repo => `
+                <div class="col-md-4">
+                    <div class="repo-item p-3 h-100 d-flex flex-column">
+                        <h6 class="text-white mb-2">
+                            <i class="far fa-folder me-2 text-primary"></i>${repo.name}
+                        </h6>
+                        <p class="text-secondary small mb-3">${repo.description || 'Active development project.'}</p>
+                        <div class="d-flex gap-3 text-secondary small mt-auto">
+                            <span><i class="fas fa-circle text-primary small me-1"></i> ${repo.language || 'Mixed'}</span>
+                            <span><i class="far fa-star me-1"></i> ${repo.stargazers_count ?? 0}</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        `).join('');
-            }
+            `).join('');
+        }
 
-            function handleFallback() {
-                // Fallback for Repos so the section isn't empty
-                document.getElementById('repo-container').innerHTML = `
-            <div class="col-12 text-center">
-                <p class="text-secondary">GitHub API is currently resting. <br> 
-                <a href="https://github.com/sudhanchaudhary" class="text-primary">Visit my profile directly &rarr;</a></p>
-            </div>
-        `;
-                // Fallback for Grid
-                const grid = document.getElementById('contribution-grid');
-                if (grid) {
-                    grid.innerHTML = Array(371).fill().map(() =>
-                        `<div class="square level-${Math.floor(Math.random() * 2)}"></div>`
-                    ).join('');
-                }
-            }
+        function handleFallback() {
+            document.getElementById('lang-progress-bar').innerHTML =
+                '<div class="progress-bar" style="width: 100%; background-color: #30363d"></div>';
 
-            // Reuse the fetchAndRenderContributions from previous message...
-            initPortfolio();
-        });
-        
-    </script>
+            document.getElementById('lang-list').innerHTML =
+                '<li class="text-secondary small">Could not load languages right now.</li>';
+
+            document.getElementById('repo-container').innerHTML = `
+                <div class="col-12 text-center py-4">
+                    <p class="text-secondary mb-0">
+                        GitHub API is currently unavailable.<br>
+                        <a href="https://github.com/sudhanchaudhary" class="text-primary" target="_blank">Visit my profile directly &rarr;</a>
+                    </p>
+                </div>
+            `;
+        }
+
+        initPortfolio();
+    });
+</script>
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
     {% if messages %}
     {% for message in messages %}
