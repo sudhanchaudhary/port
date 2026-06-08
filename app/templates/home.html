@@ -24,10 +24,20 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark pt-4 position-relative">
         <div class="container">
+
+            <!-- TOGGLER (MOBILE MENU BUTTON) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- BRAND -->
             <a class="navbar-brand d-flex align-items-center fw-bold" href="#">
                 <span class="text-primary me-2">&lt;/&gt;</span> dev::madhusudhan
             </a>
-            <div class="collapse navbar-collapse justify-content-center">
+
+            <!-- NAV LINKS -->
+            <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
                 <ul class="navbar-nav gap-4">
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
@@ -35,12 +45,16 @@
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
+
             </div>
+
+            <!-- ACTION BUTTONS -->
             <div class="d-flex gap-3">
                 <a href="https://github.com/sudhanchaudhary" target="blank"
                     class="btn btn-dark-glass btn-sm px-3">GitHub</a>
                 <a href="{{resume.resume.url}}" download class="btn btn-primary btn-sm px-3">Resume</a>
             </div>
+
         </div>
     </nav>
 
@@ -163,7 +177,7 @@
                                     <div class="skill-name">{{j.skill}}</div>
                                     <div class="skill-exp">Experience: {{j.experience}} yrs</div>
                                 </div>
-                                <span class="badge-skill">{{j.level}}t</span>
+                                <span class="badge-skill">{{j.level}}</span>
                             </div>
                             {% endfor %}
                         </div>
@@ -405,109 +419,109 @@
         </div>
     </section>
     <!-- js -->
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const username = 'sudhanchaudhary';
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const username = 'sudhanchaudhary';
 
-        const langColors = {
-            JavaScript: '#f1e05a',
-            Python: '#3572A5',
-            HTML: '#e34c26',
-            CSS: '#563d7c',
-            TypeScript: '#3178c6',
-            Java: '#b07219',
-            PHP: '#4F5D95',
-            'C++': '#f34b7d',
-            C: '#555555',
-            'C#': '#178600',
-            Shell: '#89e051',
-            Vue: '#41b883',
-            Dart: '#00B4AB',
-            Kotlin: '#A97BFF'
-        };
+            const langColors = {
+                JavaScript: '#f1e05a',
+                Python: '#3572A5',
+                HTML: '#e34c26',
+                CSS: '#563d7c',
+                TypeScript: '#3178c6',
+                Java: '#b07219',
+                PHP: '#4F5D95',
+                'C++': '#f34b7d',
+                C: '#555555',
+                'C#': '#178600',
+                Shell: '#89e051',
+                Vue: '#41b883',
+                Dart: '#00B4AB',
+                Kotlin: '#A97BFF'
+            };
 
-        async function initPortfolio() {
-            try {
-                const [userRes, repoRes] = await Promise.all([
-                    fetch(`https://api.github.com/users/${username}`),
-                    fetch(`https://api.github.com/users/${username}/repos?sort=updated&direction=desc&per_page=30`)
-                ]);
+            async function initPortfolio() {
+                try {
+                    const [userRes, repoRes] = await Promise.all([
+                        fetch(`https://api.github.com/users/${username}`),
+                        fetch(`https://api.github.com/users/${username}/repos?sort=updated&direction=desc&per_page=30`)
+                    ]);
 
-                if (!userRes.ok || !repoRes.ok) {
-                    throw new Error(`GitHub API error: user ${userRes.status}, repos ${repoRes.status}`);
+                    if (!userRes.ok || !repoRes.ok) {
+                        throw new Error(`GitHub API error: user ${userRes.status}, repos ${repoRes.status}`);
+                    }
+
+                    const user = await userRes.json();
+                    const repos = await repoRes.json();
+                    const activeRepos = repos.filter(repo => !repo.fork && !repo.archived);
+
+                    document.getElementById('gh-bio').innerText = user.bio || 'Full Stack Developer';
+                    document.getElementById('gh-repos').innerText = user.public_repos ?? '--';
+                    document.getElementById('gh-followers').innerText = user.followers ?? '--';
+
+                    await processLanguages(activeRepos);
+                    renderRepos(activeRepos.slice(0, 3));
+
+                    if (typeof fetchAndRenderContributions === 'function') {
+                        fetchAndRenderContributions();
+                    }
+                } catch (err) {
+                    console.error('GitHub Sync Error:', err);
+                    handleFallback();
                 }
-
-                const user = await userRes.json();
-                const repos = await repoRes.json();
-                const activeRepos = repos.filter(repo => !repo.fork && !repo.archived);
-
-                document.getElementById('gh-bio').innerText = user.bio || 'Full Stack Developer';
-                document.getElementById('gh-repos').innerText = user.public_repos ?? '--';
-                document.getElementById('gh-followers').innerText = user.followers ?? '--';
-
-                await processLanguages(activeRepos);
-                renderRepos(activeRepos.slice(0, 3));
-
-                if (typeof fetchAndRenderContributions === 'function') {
-                    fetchAndRenderContributions();
-                }
-            } catch (err) {
-                console.error('GitHub Sync Error:', err);
-                handleFallback();
             }
-        }
 
-        async function processLanguages(repos) {
-            const langTotals = {};
+            async function processLanguages(repos) {
+                const langTotals = {};
 
-            const languageResponses = await Promise.allSettled(
-                repos.slice(0, 20).map(repo =>
-                    fetch(repo.languages_url).then(res => {
-                        if (!res.ok) {
-                            throw new Error(`Language API error for ${repo.name}: ${res.status}`);
-                        }
+                const languageResponses = await Promise.allSettled(
+                    repos.slice(0, 20).map(repo =>
+                        fetch(repo.languages_url).then(res => {
+                            if (!res.ok) {
+                                throw new Error(`Language API error for ${repo.name}: ${res.status}`);
+                            }
 
-                        return res.json();
-                    })
-                )
-            );
+                            return res.json();
+                        })
+                    )
+                );
 
-            languageResponses.forEach(result => {
-                if (result.status !== 'fulfilled') {
+                languageResponses.forEach(result => {
+                    if (result.status !== 'fulfilled') {
+                        return;
+                    }
+
+                    Object.entries(result.value).forEach(([name, bytes]) => {
+                        langTotals[name] = (langTotals[name] || 0) + bytes;
+                    });
+                });
+
+                const sorted = Object.entries(langTotals).sort((a, b) => b[1] - a[1]);
+                const total = sorted.reduce((sum, [, bytes]) => sum + bytes, 0);
+                const progressBar = document.getElementById('lang-progress-bar');
+                const langList = document.getElementById('lang-list');
+
+                progressBar.innerHTML = '';
+                langList.innerHTML = '';
+
+                if (!total) {
+                    progressBar.innerHTML = '<div class="progress-bar" style="width: 100%; background-color: #30363d"></div>';
+                    langList.innerHTML = '<li class="text-secondary small">No primary languages found yet.</li>';
                     return;
                 }
 
-                Object.entries(result.value).forEach(([name, bytes]) => {
-                    langTotals[name] = (langTotals[name] || 0) + bytes;
-                });
-            });
+                sorted.slice(0, 6).forEach(([name, bytes]) => {
+                    const pct = ((bytes / total) * 100).toFixed(1);
+                    const color = langColors[name] || '#8b949e';
 
-            const sorted = Object.entries(langTotals).sort((a, b) => b[1] - a[1]);
-            const total = sorted.reduce((sum, [, bytes]) => sum + bytes, 0);
-            const progressBar = document.getElementById('lang-progress-bar');
-            const langList = document.getElementById('lang-list');
+                    progressBar.insertAdjacentHTML(
+                        'beforeend',
+                        `<div class="progress-bar" title="${name} ${pct}%" style="width: ${pct}%; background-color: ${color}"></div>`
+                    );
 
-            progressBar.innerHTML = '';
-            langList.innerHTML = '';
-
-            if (!total) {
-                progressBar.innerHTML = '<div class="progress-bar" style="width: 100%; background-color: #30363d"></div>';
-                langList.innerHTML = '<li class="text-secondary small">No primary languages found yet.</li>';
-                return;
-            }
-
-            sorted.slice(0, 6).forEach(([name, bytes]) => {
-                const pct = ((bytes / total) * 100).toFixed(1);
-                const color = langColors[name] || '#8b949e';
-
-                progressBar.insertAdjacentHTML(
-                    'beforeend',
-                    `<div class="progress-bar" title="${name} ${pct}%" style="width: ${pct}%; background-color: ${color}"></div>`
-                );
-
-                langList.insertAdjacentHTML(
-                    'beforeend',
-                    `
+                    langList.insertAdjacentHTML(
+                        'beforeend',
+                        `
                     <li class="d-flex justify-content-between mb-3 small">
                         <span class="text-secondary">
                             <i class="fas fa-circle me-2" style="color:${color}"></i>${name}
@@ -515,19 +529,19 @@
                         <span class="text-white fw-bold">${pct}%</span>
                     </li>
                     `
-                );
-            });
-        }
-
-        function renderRepos(repos) {
-            const container = document.getElementById('repo-container');
-
-            if (!repos.length) {
-                container.innerHTML = '<div class="col-12 text-center py-4"><p class="text-secondary mb-0">No recent public repositories found.</p></div>';
-                return;
+                    );
+                });
             }
 
-            container.innerHTML = repos.map(repo => `
+            function renderRepos(repos) {
+                const container = document.getElementById('repo-container');
+
+                if (!repos.length) {
+                    container.innerHTML = '<div class="col-12 text-center py-4"><p class="text-secondary mb-0">No recent public repositories found.</p></div>';
+                    return;
+                }
+
+                container.innerHTML = repos.map(repo => `
                 <div class="col-md-4">
                     <div class="repo-item p-3 h-100 d-flex flex-column">
                         <h6 class="text-white mb-2">
@@ -541,28 +555,29 @@
                     </div>
                 </div>
             `).join('');
-        }
+            }
 
-        function handleFallback() {
-            document.getElementById('lang-progress-bar').innerHTML =
-                '<div class="progress-bar" style="width: 100%; background-color: #30363d"></div>';
+            function handleFallback() {
+                document.getElementById('lang-progress-bar').innerHTML =
+                    '<div class="progress-bar" style="width: 100%; background-color: #30363d"></div>';
 
-            document.getElementById('lang-list').innerHTML =
-                '<li class="text-secondary small">Could not load languages right now.</li>';
+                document.getElementById('lang-list').innerHTML =
+                    '<li class="text-secondary small">Rate limit reached.</li>';
 
-            document.getElementById('repo-container').innerHTML = `
+                document.getElementById('repo-container').innerHTML = `
                 <div class="col-12 text-center py-4">
                     <p class="text-secondary mb-0">
-                        GitHub API is currently unavailable.<br>
+                        Rate limit reached.<br>
                         <a href="https://github.com/sudhanchaudhary" class="text-primary" target="_blank">Visit my profile directly &rarr;</a>
                     </p>
                 </div>
             `;
-        }
+            }
 
-        initPortfolio();
-    });
-</script>
+            initPortfolio();
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
     {% if messages %}
     {% for message in messages %}

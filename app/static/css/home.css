@@ -502,3 +502,206 @@ body {
 .text-primary { color: #58a6ff !important; }
 .text-success { color: #3fb950 !important; }
 .hover-primary:hover { color: #58a6ff !important; }
+
+/* =====================================================
+   RESPONSIVE FIXES (DO NOT ALTER BASE STYLES ABOVE)
+===================================================== */
+
+/* =========================
+   GENERAL MOBILE FIX
+========================= */
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* HERO */
+    .hero-section {
+        min-height: auto;
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+
+    .hero-section .d-flex {
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+    }
+
+    .btn-lg {
+        width: 100%;
+    }
+
+    /* NAVBAR */
+    .navbar-nav {
+        gap: 0.75rem !important;
+        padding-top: 1rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.9rem;
+    }
+
+    /* CODE WINDOW */
+    .code-window {
+        margin-top: 1.5rem;
+    }
+
+    .code-body {
+        font-size: 0.75rem;
+        padding: 16px;
+        overflow-x: auto;
+    }
+
+    .code-header {
+        padding: 10px 14px;
+    }
+
+    .file-name {
+        font-size: 0.7rem;
+    }
+
+    .code-footer {
+        font-size: 0.65rem;
+        padding: 8px 14px;
+    }
+
+    /* ABOUT */
+    .about-section {
+        text-align: center;
+    }
+
+    .about-visual-container {
+        margin-bottom: 1.5rem;
+    }
+
+    /* SKILLS */
+    .stack-header {
+        padding: 14px;
+        font-size: 0.85rem;
+    }
+
+    .stack-body {
+        padding: 14px;
+    }
+
+    .skill-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    /* PROJECTS */
+    .project-card {
+        padding: 1.2rem;
+    }
+
+    /* CONTACT */
+    .contact-icon-box {
+        margin-bottom: 0.5rem;
+    }
+
+    .custom-input {
+        font-size: 0.95rem;
+    }
+
+    .btn-social {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .btn-primary-handshake {
+        width: 100%;
+    }
+}
+
+/* =========================
+   SMALL PHONES (VERY SMALL)
+========================= */
+@media (max-width: 480px) {
+
+    h1.display-3 {
+        font-size: 1.8rem;
+    }
+
+    h2.display-5 {
+        font-size: 1.5rem;
+    }
+
+    h3.h4 {
+        font-size: 1rem;
+    }
+
+    .status-badge {
+        font-size: 0.75rem;
+        padding: 5px 12px;
+    }
+
+    .project-card {
+        padding: 1rem;
+    }
+
+    .skill-name {
+        font-size: 0.9rem;
+    }
+
+    .skill-exp {
+        font-size: 0.7rem;
+    }
+}
+
+/* =========================
+   TABLETS
+========================= */
+@media (min-width: 768px) and (max-width: 992px) {
+
+    .hero-section {
+        padding: 3rem 1.5rem;
+    }
+
+    .code-body {
+        font-size: 0.8rem;
+    }
+
+    .project-card {
+        padding: 1.5rem;
+    }
+
+    .stack-body {
+        padding: 16px;
+    }
+}
+
+/* =========================
+   LAPTOPS
+========================= */
+@media (min-width: 992px) {
+
+    .hero-section {
+        padding: 4rem 2rem;
+    }
+}
+
+/* =========================
+   LANDSCAPE FIX
+========================= */
+@media (max-height: 600px) {
+
+    .hero-section {
+        min-height: auto;
+        padding: 2rem 1rem;
+    }
+}
+
+/* =========================
+   TOUCH DEVICE FIX
+========================= */
+@media (hover: none) {
+
+    .skill-item:hover,
+    .project-card:hover,
+    .repo-item:hover {
+        transform: none;
+    }
+}
