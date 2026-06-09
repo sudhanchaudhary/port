@@ -545,18 +545,21 @@ body {
     /* CODE WINDOW */
     .code-window {
         margin-top: 1.5rem;
+        width: 100%;
     }
 
     .code-body {
         font-size: 0.75rem;
         padding: 16px;
         overflow-x: auto;
+        white-space: pre-wrap; 
+        word-break: break-word;
     }
 
     .code-header {
         padding: 10px 14px;
     }
-
+    
     .file-name {
         font-size: 0.7rem;
     }
@@ -569,6 +572,7 @@ body {
     /* ABOUT */
     .about-section {
         text-align: center;
+        padding: 3rem 1rem;
     }
 
     .about-visual-container {
@@ -586,17 +590,37 @@ body {
     }
 
     .skill-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
+        flex-direction: row; /* Preserved row context but allowed flexible layout wrap */
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 12px;
+    }
+    
+    .skill-exp {
+        margin-left: auto; /* Keeps the experience tag neatly aligned right on small lists */
+    }
+
+    /* HEATMAP & GITHUB DASHBOARD */
+    .gh-heatmap {
+        overflow-x: auto; /* Ensures wide commit graphs do not break layout width */
+        white-space: nowrap;
     }
 
     /* PROJECTS */
     .project-card {
-        padding: 1.2rem;
+        padding: 1.5rem 1.2rem;
+    }
+    
+    .tech-tag {
+        margin-bottom: 4px; /* Keeps stacked tags spaced cleanly */
     }
 
     /* CONTACT */
+    .contact-card {
+        padding: 1.5rem 1rem !important;
+    }
+
     .contact-icon-box {
         margin-bottom: 0.5rem;
     }
@@ -622,15 +646,15 @@ body {
 @media (max-width: 480px) {
 
     h1.display-3 {
-        font-size: 1.8rem;
+        font-size: 2rem !important; /* Adjusted to fluid hierarchy */
     }
 
     h2.display-5 {
-        font-size: 1.5rem;
+        font-size: 1.65rem !important;
     }
 
     h3.h4 {
-        font-size: 1rem;
+        font-size: 1.1rem !important;
     }
 
     .status-badge {
@@ -639,15 +663,20 @@ body {
     }
 
     .project-card {
-        padding: 1rem;
+        padding: 1.25rem 1rem;
     }
 
     .skill-name {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
     .skill-exp {
         font-size: 0.7rem;
+    }
+    
+    .badge-skill {
+        padding: 2px 8px;
+        font-size: 0.65rem;
     }
 }
 
@@ -702,6 +731,6 @@ body {
     .skill-item:hover,
     .project-card:hover,
     .repo-item:hover {
-        transform: none;
+        transform: none; /* Prevents sticky hover animations on iOS/Android touch triggers */
     }
 }
